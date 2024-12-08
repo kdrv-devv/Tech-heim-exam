@@ -17,7 +17,7 @@ const OurBlog = () => {
           <div className="our-blog-header">
             <h5>Our Blogs</h5>
             <Link>
-              <h6>View all > </h6>
+              <h6>View all  </h6>
             </Link>
           </div>
 
