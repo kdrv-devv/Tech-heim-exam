@@ -1,0 +1,840 @@
+.new-product > div {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .new-products-top {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .view-all {
+      padding: 10px 0;
+      display: flex;
+      border-bottom: 2px solid #b4b4b4;
+      align-items: center;
+      justify-content: space-between;
+      h4 {
+        font-weight: 500;
+        font-size: 2rem;
+        color: #0c0c0c;
+      }
+      h6 {
+        font-weight: 400;
+        font-size: 1rem;
+        text-align: center;
+        color: #0c0c0c;
+      }
+    }
+  }
+  
+  .new-product-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  
+    .new-card {
+      position: relative;
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: -1px 4px 25px -1px rgba(113, 113, 113, 0.12);
+      background: #ffff;
+      .like-btn {
+        position: absolute;
+        top: 0.625rem;
+        left: 0.625rem;
+        background-color: #ffff;
+        font-size: 1.4375rem;
+        color: blue;
+      }
+      .new-card-top {
+        padding: 1rem;
+        border-bottom: 0.125rem solid;
+        border-image-source: linear-gradient(
+          90deg,
+          rgba(68, 68, 68, 0.1) 0%,
+          rgba(16, 16, 16, 0.7) 54.17%,
+          rgba(68, 68, 68, 0.1) 99.47%
+        );
+        img {
+          width: 100%;
+          height: 65%;
+        }
+      }
+      .new-card-bottom {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 1rem;
+        gap: 16px;
+        h5 {
+          font-weight: 300;
+          font-size: 1rem;
+          line-height: 150%;
+          color: #0c0c0c;
+        }
+        .rating {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          h6 {
+            font-weight: 300;
+            font-size: 1.125rem;
+            color: #0c0c0c;
+          }
+          h5 {
+            color: #063a88;
+            font-weight: 500;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 935px) {
+    .new-product-cards {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .new-product-cards {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+  }
+  
+  //   start new products bottom
+  
+  .new-products-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .new-products-left {
+    width: 65%;
+    height: 420px;
+    padding: 24px;
+    border-radius: 8px;
+    background: url(../imges//left-bottom.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    display: flex;
+    gap: 33px;
+    .iphone15 {
+      width: 50%;
+      display: flex;
+      gap: 29px;
+      flex-direction: column;
+      justify-content: space-between;
+      h4 {
+        font-weight: 500;
+        font-size: 26px;
+        color: #fff;
+        span {
+          color: #0c0c0c;
+        }
+      }
+    }
+    .iphone15-details {
+      width: 46%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 1.5625rem;
+      .days {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        .day {
+          border: 1px solid black;
+          border-radius: 0.5rem;
+          padding: 0.25rem 0.5rem;
+          width: 3.0625rem;
+          height: 2.875rem;
+          background-color: transparent;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: space-between;
+          h6 {
+            font-weight: 500;
+            font-size: 1rem;
+            text-align: center;
+            color: black;
+          }
+          h5 {
+            font-weight: 300;
+            font-size: 0.875rem;
+            text-align: center;
+            color: black;
+          }
+        }
+      }
+      .iphone15-text {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        h4 {
+          font-weight: 500;
+          font-size: 20px;
+          text-align: center;
+          color: black;
+        }
+        h6 {
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 150%;
+          color: #2d2d2d;
+          text-align: center;
+        }
+      }
+      button {
+        border-radius: 0.5rem;
+        width: 8.375rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #0c68f4;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        color: #fff;
+        transition: 0.3s;
+        &:hover {
+          border: 2px solid #0c68f4;
+          background-color: transparent;
+          color: #0c68f4;
+        }
+      }
+    }
+  }
+  
+  .new-products-right {
+    padding: 2rem;
+    width: 32%;
+    border-radius: 0.5rem;
+    height: 26.25rem;
+    background: url(../imges/right-bottom-upg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h5 {
+      text-align: center;
+      font-weight: 500;
+      font-size: 1.5rem;
+      color: #fcc870;
+    }
+  
+    .play-station-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 59px;
+      h6 {
+        font-weight: 500;
+        font-size: 20px;
+        color: #005690;
+      }
+      button {
+        margin-left: 30px;
+        border-radius: 0.5rem;
+        width: 9.25rem;
+        height: 2.875rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #0c68f4;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        color: #fff;
+        transition: 0.3s;
+        &:hover {
+          border: 2px solid #0c68f4;
+          background-color: transparent;
+          color: #0c68f4;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 1039px) {
+    .new-products-left {
+      width: 65%;
+      height: 370px;
+      padding: 24px;
+      border-radius: 8px;
+      background: url(../imges//left-bottom.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      align-items: center;
+      display: flex;
+      gap: 33px;
+      .iphone15 {
+        width: 50%;
+        display: flex;
+        gap: 29px;
+        flex-direction: column;
+        justify-content: space-between;
+        h4 {
+          font-weight: 500;
+          font-size: 26px;
+          color: #fff;
+          span {
+            color: #0c0c0c;
+          }
+        }
+      }
+      .iphone15-details {
+        width: 46%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+        .days {
+          display: flex;
+          align-items: center;
+          gap: 0.6rem;
+          .day {
+            border: 1px solid black;
+            border-radius: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            width: 3.0625rem;
+            height: 2.875rem;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+            h6 {
+              font-weight: 500;
+              font-size: 0.7rem;
+              text-align: center;
+              color: black;
+            }
+            h5 {
+              font-weight: 300;
+              font-size: 0.575rem;
+              text-align: center;
+              color: black;
+            }
+          }
+        }
+        .iphone15-text {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          h4 {
+            font-weight: 500;
+            font-size: 17px;
+            text-align: center;
+            color: black;
+          }
+          h6 {
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 150%;
+            color: #2d2d2d;
+            text-align: center;
+          }
+        }
+        button {
+          border-radius: 0.5rem;
+          width: 8.375rem;
+          height: 3rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #0c68f4;
+          font-weight: 400;
+          font-size: 16px;
+          text-align: center;
+          color: #fff;
+          transition: 0.3s;
+          &:hover {
+            border: 2px solid #0c68f4;
+            background-color: transparent;
+            color: #0c68f4;
+          }
+        }
+      }
+    }
+  
+    .new-products-right {
+      padding: 2rem;
+      width: 32%;
+      border-radius: 0.5rem;
+      height: 370px;
+      background: url(../imges/right-bottom-upg.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      h5 {
+        text-align: center;
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: #fcc870;
+      }
+  
+      .play-station-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 59px;
+        h6 {
+          font-weight: 500;
+          font-size: 20px;
+          color: #005690;
+        }
+        button {
+          margin-left: 30px;
+          border-radius: 0.5rem;
+          width: 9.25rem;
+          height: 2.875rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #0c68f4;
+          font-weight: 400;
+          font-size: 16px;
+          text-align: center;
+          color: #fff;
+          transition: 0.3s;
+          &:hover {
+            border: 2px solid #0c68f4;
+            background-color: transparent;
+            color: #0c68f4;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 911px) {
+    .new-products-left {
+      width: 100%;
+      height: 420px;
+      padding: 24px;
+      border-radius: 8px;
+      background: url(../imges//left-bottom.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      align-items: center;
+      display: flex;
+      gap: 33px;
+  
+      .iphone15 {
+        width: 50%;
+        display: flex;
+        gap: 29px;
+  
+        flex-direction: column;
+        justify-content: space-between;
+        h4 {
+          font-weight: 500;
+          font-size: 26px;
+          color: #fff;
+          span {
+            color: #0c0c0c;
+          }
+        }
+      }
+      .iphone15-details {
+        width: 46%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+        .days {
+          display: flex;
+          align-items: center;
+          gap: 0.6rem;
+          .day {
+            border: 1px solid black;
+            border-radius: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            width: 3.0625rem;
+            height: 2.875rem;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+            h6 {
+              font-weight: 500;
+              font-size: 0.7rem;
+              text-align: center;
+              color: black;
+            }
+            h5 {
+              font-weight: 300;
+              font-size: 0.575rem;
+              text-align: center;
+              color: black;
+            }
+          }
+        }
+        .iphone15-text {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          h4 {
+            font-weight: 500;
+            font-size: 17px;
+            text-align: center;
+            color: black;
+          }
+          h6 {
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 150%;
+            color: #2d2d2d;
+            text-align: center;
+          }
+        }
+        button {
+          border-radius: 0.5rem;
+          width: 8.375rem;
+          height: 3rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #0c68f4;
+          font-weight: 400;
+          font-size: 16px;
+          text-align: center;
+          color: #fff;
+          transition: 0.3s;
+          &:hover {
+            border: 2px solid #0c68f4;
+            background-color: transparent;
+            color: #0c68f4;
+          }
+        }
+      }
+    }
+  
+    .new-products-bottom {
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    .new-products-right {
+      padding: 2rem;
+      width: 100%;
+      border-radius: 0.5rem;
+      height: 370px;
+      background: url(../imges/right-bottom-upg.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      h5 {
+        text-align: center;
+        font-weight: 500;
+        font-size: 3.5rem;
+        color: #fcc870;
+      }
+  
+      .play-station-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 59px;
+        h6 {
+          font-weight: 500;
+          font-size: 30px;
+          color: #005690;
+        }
+        button {
+          margin-left: 30px;
+          border-radius: 0.5rem;
+          width: 13.25rem;
+          height: 2.875rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #0c68f4;
+          font-weight: 400;
+          font-size: 16px;
+          text-align: center;
+          color: #fff;
+          transition: 0.3s;
+          &:hover {
+            border: 2px solid #0c68f4;
+            background-color: transparent;
+            color: #0c68f4;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 592px){
+  
+  
+  
+      .new-products-top {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          .view-all {
+            padding: 10px 0;
+            display: flex;
+            border-bottom: 2px solid #b4b4b4;
+            align-items: center;
+            justify-content: space-between;
+            h4 {
+              font-weight: 500;
+              font-size: 1.5rem;
+              color: #0c0c0c;
+            }
+            h6 {
+              font-weight: 400;
+              font-size: 0.8rem;
+              text-align: center;
+              color: #0c0c0c;
+            }
+          }
+        }
+  
+  
+  
+      .new-products-left {
+          width: 100%;
+          height: auto;
+          flex-direction: column;
+          padding: 24px;
+          border-radius: 8px;
+          background: url(../imges//left-bottom.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          align-items: center;
+          display: flex;
+          gap: 33px;
+      
+          .iphone15 {
+            width: 80%;
+            display: flex;
+            gap: 29px;
+              text-align: center;
+            flex-direction: column;
+            justify-content: space-between;
+            h4 {
+              font-weight: 500;
+              font-size: 26px;
+              color: #fff;
+              span {
+                color: #0c0c0c;
+              }
+            }
+          }
+          .iphone15-details {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 1rem;
+            .days {
+              display: flex;
+              align-items: center;
+              gap: 0.6rem;
+              .day {
+                border: 1px solid black;
+                border-radius: 0.5rem;
+                padding: 0.25rem 0.5rem;
+                width: 3.0625rem;
+                height: 2.875rem;
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: space-between;
+                h6 {
+                  font-weight: 500;
+                  font-size: 0.7rem;
+                  text-align: center;
+                  color: black;
+                }
+                h5 {
+                  font-weight: 300;
+                  font-size: 0.575rem;
+                  text-align: center;
+                  color: black;
+                }
+              }
+            }
+            .iphone15-text {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              h4 {
+                font-weight: 500;
+                font-size: 17px;
+                text-align: center;
+                color: black;
+              }
+              h6 {
+                font-weight: 300;
+                font-size: 12px;
+                line-height: 150%;
+                color: #2d2d2d;
+                text-align: center;
+              }
+            }
+            button {
+              border-radius: 0.5rem;
+              width:90%;
+              height: 3rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: #0c68f4;
+              font-weight: 400;
+              font-size: 16px;
+              text-align: center;
+              color: #fff;
+              transition: 0.3s;
+              &:hover {
+                border: 2px solid #0c68f4;
+                background-color: transparent;
+                color: #0c68f4;
+              }
+            }
+          }
+        }
+      
+        .new-products-right {
+          padding: 2rem;
+          width: 100%;
+          border-radius: 0.5rem;
+          height: auto;
+          background: url(../imges/right-bottom-upg.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+      
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          h5 {
+            text-align: center;
+            font-weight: 500;
+            font-size: 2.5rem;
+            color: #fcc870;
+            z-index: 23;
+          }
+      
+          .play-station-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 59px;
+            h6 {
+              font-weight: 500;
+              font-size: 30px;
+              color: #29a9ff;
+            }
+            button {
+              margin-left: 0px;
+              border-radius: 0.5rem;
+              width:100%;
+              height: 2.875rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: #0c68f4;
+              font-weight: 400;
+              font-size: 16px;
+              text-align: center;
+              color: #fff;
+              transition: 0.3s;
+              &:hover {
+                border: 2px solid #0c68f4;
+                background-color: transparent;
+                color: #0c68f4;
+              }
+            }
+          }
+        }
+  }
+  
+  @media (max-width:350px) {
+      .new-products-right {
+          padding: 2rem;
+          width: 100%;
+          border-radius: 0.5rem;
+          height: auto;
+          gap: 17px;
+          background: url(../imges/right-bottom-upg.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+      
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          h5 {
+            text-align: center;
+            font-weight: 500;
+            font-size: 1.9rem;
+            color: #fcc870;
+            z-index: 23;
+          }
+      
+          .play-station-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 59px;
+            h6 {
+              font-weight: 500;
+              font-size: 26px;
+              color: #29a9ff !important;
+              z-index: 33;
+            }
+            button {
+              margin-left: 0px;
+              border-radius: 0.5rem;
+              width:100%;
+              height: 2.875rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: #0c68f4;
+              font-weight: 400;
+              font-size: 16px;
+              text-align: center;
+              color: #fff;
+              transition: 0.3s;
+              &:hover {
+                border: 2px solid #0c68f4;
+                background-color: transparent;
+                color: #0c68f4;
+              }
+            }
+          }
+        }
+      
+  }

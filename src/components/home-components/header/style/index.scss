@@ -1,0 +1,105 @@
+.header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #ffff;
+    z-index: 99;
+}
+
+.header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  h5 {
+    font-weight: 300;
+    font-size: 1.125rem;
+    text-align: center;
+    color: black;
+    transition: 0.2s;
+    &:hover {
+      color: #f45e0c;
+    }
+  }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  .heart {
+    font-size: 28px;
+    color: black;
+  }
+  button {
+    background-color: #ffff;
+    transition: .2s;
+    &:hover{
+        color: #f45e0c;
+    }
+  }
+}
+
+.open-bars {
+  display: none;
+}
+
+// start responsive
+
+@media (max-width: 845px) {
+  .header-center {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    h5 {
+      font-weight: 300;
+      font-size: 0.9rem;
+      text-align: center;
+      color: black;
+      transition: 0.2s;
+      &:hover {
+        color: #f45e0c;
+      }
+    }
+  }
+}
+
+@media (max-width: 656px) {
+  .header-center {
+    display: none;
+    align-items: center;
+    gap: 2rem;
+    h5 {
+      font-weight: 300;
+      font-size: 0.9rem;
+      text-align: center;
+      color: black;
+      transition: 0.2s;
+      &:hover {
+        color: #f45e0c;
+      }
+    }
+  }
+  .open-bars {
+    display: flex;
+    .open-bars-icon {
+      font-size: 28px;
+      color: black;
+    }
+  }
+
+  header > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+  
+
+}
