@@ -1,0 +1,42 @@
+.basket > div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  gap: 20px;
+}
+.basket-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  a {
+    font-weight: 300;
+    font-size: 18px;
+    text-align: center;
+    color: rgb(197, 190, 190);
+  }
+}
+.basket-bottom {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  .subtotal {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #f6f6f6;
+    width: 200px;
+    justify-content: space-between;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    h5 {
+      font-weight: 500;
+      font-size: 20px;
+      color: black;
+    }
+    h6{
+        font-weight: 500;
+        font-size: 20px;
+        color: black;
+    }
+  }
+}

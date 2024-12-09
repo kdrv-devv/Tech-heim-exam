@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Basket, Details, Home } from "../pages";
+import Seleres from "../components/seleres";
 
 export const root = createBrowserRouter([
   {
@@ -11,7 +12,11 @@ export const root = createBrowserRouter([
     element: <Basket />,
   },
   {
-    path: "/details",
-    element: <Details />,
+    path: "/products/:id",
+    element: <Details/>,
+  },
+  {
+    path: "/seleres/:id",
+    element: <Seleres/>,
   },
 ]);

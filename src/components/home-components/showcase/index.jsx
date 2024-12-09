@@ -5,6 +5,8 @@ import macbook from './imges/macbook.png'
 import laptop from './imges/mak3.jpeg'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 const Showcase = () => {
   return (
     <>
@@ -29,14 +31,17 @@ const Showcase = () => {
               slidesPerView={1}
               onSlideChange={() => console.log("slide change")}
               onSwiper={(swiper) => console.log(swiper)}
+              modules={[Pagination]}
+              pagination={{ clickable: true }} 
             >
-              <SwiperSlide className="swiper-slide">
-                {" "}
-                <img src={ShowcaseRight_img} alt="showcase right img" />
-              </SwiperSlide>
+            
               <SwiperSlide className="swiper-slide">
                 {" "}
                 <img src={macbook} alt="showcase right img" />
+              </SwiperSlide>
+              <SwiperSlide className="swiper-slide">
+                {" "}
+                <img src={ShowcaseRight_img} alt="showcase right img" />
               </SwiperSlide>
               <SwiperSlide className="swiper-slide">
                 {" "}

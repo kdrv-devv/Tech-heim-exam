@@ -1,8 +1,13 @@
 import React from 'react'
 
+import DetailsComponent from '../../components/details-components/full'
+import { Header } from '../../components'
 const Details = () => {
   return (
-    <div>Details</div>
+      <>
+      <Header/>
+      <DetailsComponent/>
+      </>
   )
 }
 

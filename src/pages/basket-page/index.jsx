@@ -1,8 +1,13 @@
 import React from 'react'
+import { BasketComponent, Footer, Header } from '../../components'
 
 const Basket = () => {
   return (
-    <div>Basket</div>
+   <> 
+      <Header/>
+      <BasketComponent/>
+      <Footer/>
+   </>
   )
 }
 
