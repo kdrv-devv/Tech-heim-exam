@@ -8,7 +8,7 @@ const initialState={
   
   const reducer =(state , {type , value,idd})=>{
     
-      console.log(state, "BU state");
+      console.log(state.data, "BU state");
     switch (type) {
         case "add":
             const existingItemIndex = state.data.findIndex((item) => item.id === value.id);
@@ -34,7 +34,7 @@ const initialState={
         };
         case "increment":
             const incrementedData = state.data.map((item) =>
-              item.id === idd ? { ...item, count: item.count + 1 } : item
+              item.id === idd ? { ...item, count: item.count + 1,price:item.price * item.count  } : item
             );
             localStorage.setItem("shop", JSON.stringify(incrementedData));
             return { ...state, data: incrementedData };
