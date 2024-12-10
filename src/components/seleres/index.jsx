@@ -23,17 +23,17 @@ import { Korzinka } from '../../context/add-bag'
 
 const Seleres = () => {
 
-    const [value, setValue] = useState('female'); // `value`ni aniqlaymiz
+    const [value, setValue] = useState('female');
 
     const handleChange = (event) => {
-      setValue(event.target.value); // Tanlangan qiymatni yangilash
+      setValue(event.target.value); 
     };
 
 
 
     const {id} = useParams()
     console.log(id);
-    const cleanId = id.replace(":", ""); // ":" belgisi olib tashlanadi
+    const cleanId = id.replace(":", ""); 
 console.log(cleanId); 
     
     const {data , loading , error} = useAxios({url:`seleres/${cleanId}`})
@@ -44,7 +44,6 @@ console.log(cleanId);
     console.log(data);
     
   
-    // Savatga qo'shish funksiyasi
     const addToCart = () => {
       if (data) {
         dispatch({ type: "add", value: data });
