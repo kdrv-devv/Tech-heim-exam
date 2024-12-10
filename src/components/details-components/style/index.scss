@@ -23,12 +23,11 @@
     display: flex;
     width: 31%;
     flex-direction: column;
-    .product-little-photos {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      img {
-        width: 18%;
+    .big-photo{
+      height: 300px;
+      img{
+        height: 100%;
+        width: 100%;
       }
     }
   }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import bigPhoto from "../imges/big-photo.png";
 import productLittle from "../imges/product-little.png";
 import ratimg from "../imges/rat.svg";
@@ -9,52 +9,51 @@ import sariq from "../imges/discount-shape.svg";
 import "../style/index.scss";
 
 // radio
-
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
 import { useParams } from "react-router-dom";
 import useAxios from "../../../hooks/useAxios";
+import { Korzinka } from "../../../context/add-bag";
 
 const DetailsComponent = () => {
-  const [value, setValue] = React.useState("female");
+  const [value, setValue] = useState("female");
   const handleChange = (event) => {
     setValue(event.target.value);
   };
-// ===================================================================
-  const { id } = useParams();
 
-  const {data , loading , error} = useAxios({url:`products/${id}`})
-  console.log(id);
+  const { id } = useParams();
+  const cleanId = id.replace(":", ""); // ":" belgisi olib tashlanadi
+  const { data, loading, error } = useAxios({ url: `products/${cleanId}` });
+
+  const { dispatch } = useContext(Korzinka);
+  console.log(data);
+  
+
+  // Savatga qo'shish funksiyasi
+  const addToCart = () => {
+    if (data) {
+      dispatch({ type: "add", value: data });
+    }
+  };
 
   return (
     <section className="details">
-        <pre>{JSON.stringify(product, null , 4)}</pre>
       <div className="container">
         <nav className="details-nav">
           <a href="#">Home ></a>
           <a href="#">Products ></a>
-          <a href="#">Laptops > </a>
+          <a href="#">Laptops ></a>
         </nav>
         <div className="product-main-details">
           <div className="product-photos">
             <div className="big-photo">
-              <img src={bigPhoto} alt="" />
-            </div>
-
-            <div className="product-little-photos">
-              <img src={productLittle} alt="" />
-              <img src={productLittle} alt="" />
-              <img src={productLittle} alt="" />
-              <img src={productLittle} alt="" />
-              <img src={productLittle} alt="" />
+              <img src={data.image} alt="" />
             </div>
           </div>
-
           <div className="product-info">
-            <h4>MacBook Pro M2 MNEJ3 2022 LLA 13.3 inch</h4>
+            <h4>{data.title}</h4>
 
             <div className="rat">
               <img src={ratimg} alt="img" />
@@ -78,23 +77,23 @@ const DetailsComponent = () => {
             <div className="xotirasi">
               <div className="flex justify-between">
                 <h5>brand:</h5>
-                <h6>Apple</h6>
+                <h6>{data.brand}</h6>
               </div>
               <div className="flex justify-between">
                 <h5>Model Name :</h5>
-                <h6>Macbook Pro</h6>
+                <h6>{data.model}</h6>
               </div>
               <div className="flex justify-between">
                 <h5>Screen Size:</h5>
-                <h6>13.3 Inches</h6>
+                <h6>{data.size}</h6>
               </div>
               <div className="flex justify-between">
                 <h5>Hard Disk Size:</h5>
-                <h6>256 GB</h6>
+                <h6>{data.ram}</h6>
               </div>
               <div className="flex justify-between">
                 <h5>CPU Model:</h5>
-                <h6>core i5</h6>
+                <h6>{data.graphics}</h6>
               </div>
             </div>
           </div>
@@ -102,11 +101,10 @@ const DetailsComponent = () => {
           <div className="buy-type">
             <div className="price-product">
               <div className="flex flex-col gap-[4px]">
-                <h5>$ 1299.00</h5>
+                <h5>{data.newPrice}</h5>
                 <h6>last price $ 1410,87</h6>
               </div>
               <h4>
-                {" "}
                 <img src={sariq} alt="img" />
                 -12%
               </h4>
@@ -126,7 +124,7 @@ const DetailsComponent = () => {
                 <FormControlLabel
                   value="male"
                   control={<Radio />}
-                  label="Buy in installments "
+                  label="Buy in installments"
                 />
               </RadioGroup>
             </FormControl>
@@ -151,7 +149,8 @@ const DetailsComponent = () => {
                 <h5>Month</h5>
               </button>
             </div>
-            <button className="add-btn">Add to cart</button>
+            {/* Savatga qo'shish tugmasi */}
+            <button onClick={addToCart} className="add-btn">Add to cart</button>
           </div>
         </div>
 
@@ -169,29 +168,27 @@ const DetailsComponent = () => {
 
             <div className="flex h-[50px] p-3 bg-[#F9F9F9] items-center justify-between">
               <h4>Display</h4>
-              <h6>
-                13.3-inch (diagonal) LED-backlit display with IPS technology
-              </h6>
+              <h6>{data.display}</h6>
             </div>
 
             <div className="flex h-[50px] p-3 bg-[#F9F9F9] items-center justify-between">
               <h4>Graphics</h4>
-              <h6>Apple 10-core GPU</h6>
+              <h6>{data.graphics}</h6>
             </div>
 
             <div className="flex h-[50px] p-3 bg-[#F9F9F9] items-center justify-between">
               <h4>Processor</h4>
-              <h6>Apple M2 chip</h6>
+              <h6>{data.processor}</h6>
             </div>
 
             <div className="flex h-[50px] p-3 bg-[#F9F9F9] items-center justify-between">
               <h4>In the box</h4>
-              <h6>67W USB-C Power Adapter, USB-C Charge Cable (2 m)</h6>
+              <h6>{data.display}</h6>
             </div>
 
             <div className="flex h-[50px] p-3 bg-[#F9F9F9] items-center justify-between">
               <h4>Height</h4>
-              <h6>0.61 inch (1.56 cm)</h6>
+              <h6>{data.height}</h6>
             </div>
           </div>
         </div>

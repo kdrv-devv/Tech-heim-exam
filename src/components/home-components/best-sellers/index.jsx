@@ -1,6 +1,6 @@
 // import './style/index.scss'
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useContext } from "react";
 import visonPro from "./imges/visonpro.svg";
 import ultra from "./imges/23ultra.svg";
 import iphone from "./imges/iphone.png";
@@ -15,6 +15,9 @@ import "../new-products/style/index.scss";
 import useAxios from "../../../hooks/useAxios";
 const BestSellers = () => {
   const { data, loading, error } = useAxios({ url:"seleres" });
+
+
+
 
   return (
     <>

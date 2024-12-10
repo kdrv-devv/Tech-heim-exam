@@ -31,7 +31,7 @@ const NewProduct = () => {
               {data.map((item) => (
                 <Link to={`/products/:${item.id}`}>
                 <div key={item.id} className="new-card">
-                  <button className="like-btn">
+                  <button  className="like-btn">
                     <IoIosHeartEmpty />
                   </button>
                   <div className="new-card-top">
