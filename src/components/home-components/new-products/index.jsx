@@ -29,11 +29,11 @@ const NewProduct = () => {
 
             <div className="new-product-cards">
               {data.map((item) => (
-                <Link to={`/products/:${item.id}`}>
                 <div key={item.id} className="new-card">
-                  <button  className="like-btn">
+                  <button   className="like-btn z-[9999]">
                     <IoIosHeartEmpty />
                   </button>
+                  <Link to={`/products/:${item.id}`}>
                   <div className="new-card-top">
                     <img src={item.image} alt="" />
                   </div>
@@ -46,8 +46,8 @@ const NewProduct = () => {
                       </h5>
                     </div>
                   </div>
-                </div>
                 </Link>
+                </div>
 
               ))}
             </div>

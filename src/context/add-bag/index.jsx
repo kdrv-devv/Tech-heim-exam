@@ -47,6 +47,8 @@ const initialState={
             );
             localStorage.setItem("shop", JSON.stringify(decrementedData));
             return { ...state, data: decrementedData };
+          case "isLiked":
+            
       default:
         break;   
     }

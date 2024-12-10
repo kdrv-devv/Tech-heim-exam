@@ -24,4 +24,8 @@ export const root = createBrowserRouter([
     path: "/seleres/:id",
     element: <Seleres/>,
   },
+  {
+    path:"/admin",
+    element:<Admin/>
+  }
 ]);

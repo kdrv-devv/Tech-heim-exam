@@ -14,10 +14,7 @@ import headphone from "./imges/headphone.svg";
 import "../new-products/style/index.scss";
 import useAxios from "../../../hooks/useAxios";
 const BestSellers = () => {
-  const { data, loading, error } = useAxios({ url:"seleres" });
-
-
-
+  const { data, loading, error } = useAxios({ url: "seleres" });
 
   return (
     <>
@@ -33,25 +30,25 @@ const BestSellers = () => {
 
             <div className="new-product-cards">
               {data.map((item) => (
-                <Link to={`/seleres/:${item.id}`}>
-                      <div className="new-card">
+                <div className="new-card">
                   <button className="like-btn">
                     <IoIosHeartEmpty />
                   </button>
-                  <div className="new-card-top">
-                    <img src={item.image} alt="" />
-                  </div>
-                  <div className="new-card-bottom">
-                    <h5>{item.title}</h5>
-                    <div className="rating">
-                      <h6>{`$ ${item.newPrice}`}</h6>
-                      <h5>
-                        <IoIosStar /> {item.rate}
-                      </h5>
+                  <Link to={`/seleres/:${item.id}`}>
+                    <div className="new-card-top">
+                      <img src={item.image} alt="" />
                     </div>
-                  </div>
+                    <div className="new-card-bottom">
+                      <h5>{item.title}</h5>
+                      <div className="rating">
+                        <h6>{`$ ${item.newPrice}`}</h6>
+                        <h5>
+                          <IoIosStar /> {item.rate}
+                        </h5>
+                      </div>
+                    </div>
+                  </Link>
                 </div>
-                </Link>
               ))}
             </div>
           </div>
