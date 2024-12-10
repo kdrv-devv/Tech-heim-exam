@@ -6,12 +6,13 @@ const initialState={
     data:JSON.parse(localStorage.getItem("shop")) || []
   }
   
-  const reducer =(state , {type , value,id})=>{
+  const reducer =(state , {type , value,idd})=>{
     
+      console.log(state, "BU state");
     switch (type) {
         case "add":
             const existingItemIndex = state.data.findIndex((item) => item.id === value.id);
-          
+            
             if (existingItemIndex !== -1) {
               const updatedData = [...state.data];
               updatedData[existingItemIndex].count += 1;
@@ -23,7 +24,7 @@ const initialState={
               localStorage.setItem("shop", JSON.stringify(newData.data));
               return newData;
             }
-          
+        
         case "delete":
           const deleteValue = state.data.filter((item) => item.id !== idd)
           localStorage.setItem("shop", JSON.stringify(deleteValue))
@@ -31,6 +32,21 @@ const initialState={
             ...state, 
             data: deleteValue, 
         };
+        case "increment":
+            const incrementedData = state.data.map((item) =>
+              item.id === idd ? { ...item, count: item.count + 1 } : item
+            );
+            localStorage.setItem("shop", JSON.stringify(incrementedData));
+            return { ...state, data: incrementedData };
+      
+          case "decrement":
+            const decrementedData = state.data.map((item) =>
+              item.id === idd && item.count > 1
+                ? { ...item, count: item.count - 1 }
+                : item
+            );
+            localStorage.setItem("shop", JSON.stringify(decrementedData));
+            return { ...state, data: decrementedData };
       default:
         break;   
     }

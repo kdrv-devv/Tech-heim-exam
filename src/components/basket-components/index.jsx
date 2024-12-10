@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import axios from 'axios';
 
 import './style/index.scss'
@@ -14,44 +14,14 @@ import {
   Button,
 } from "@mui/material";
 import useAxios from '../../hooks/useAxios';
+import { Korzinka } from '../../context/add-bag';
 
 const BasketComponent = () => {
-  const rows = [
-    {
-      id: 1,
-      description: "#8967856",
-      dueAmount: "$543.02",
-      dueDate: "2023/08/20",
-      actualAmount: "$543.02",
-      paymentDate: "2023/08/15",
-      count: "2",
-      total: "$1385.52",
-      image: "https://via.placeholder.com/50", // Rasmingiz URL manzili
-    },
-    {
-      id: 2,
-      description: "#8967856",
-      dueAmount: "$433.00",
-      dueDate: "2023/09/20",
-      actualAmount: "-",
-      paymentDate: "-",
-      count: "2",
-      total: "$842.50",
-      image: "https://via.placeholder.com/50", // Rasmingiz URL manzili
-    },
-    {
-      id: 3,
-      description: "#8967856",
-      dueAmount: "$433.00",
-      dueDate: "2023/10/20",
-      actualAmount: "-",
-      paymentDate: "-",
-      count: "2",
-      total: "$409.50",
-      image: "https://via.placeholder.com/50", // Rasmingiz URL manzili
-    },
-  ];
 
+
+  const { state, dispatch } = useContext(Korzinka);
+    console.log(state);
+    
   return (
         <section className='basket'>
             <div className="container">
@@ -69,17 +39,17 @@ const BasketComponent = () => {
         <TableHead>
           <TableRow>
             <TableCell />
-            <TableCell>Description</TableCell>
+            <TableCell>Photo</TableCell>
             <TableCell>Due Amount</TableCell>
             <TableCell>Due Date</TableCell>
-            <TableCell>Actual Amount</TableCell>
+            <TableCell>Ram</TableCell>
             <TableCell>Payment Date</TableCell>
             <TableCell>Count</TableCell>
             <TableCell>Total</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {state.data.map((row) => (
             <TableRow key={row.id}>
               <TableCell>
                 <Checkbox />
@@ -91,15 +61,25 @@ const BasketComponent = () => {
                     alt="item"
                     style={{ width: "50px", marginRight: "10px" }}
                   />
-                  {row.description}
+                  {row.brand}
                 </div>
               </TableCell>
-              <TableCell>{row.dueAmount}</TableCell>
-              <TableCell>{row.dueDate}</TableCell>
-              <TableCell>{row.actualAmount}</TableCell>
-              <TableCell>{row.paymentDate}</TableCell>
+              <TableCell>{row.newPrice}</TableCell>
+              <TableCell>{row.rate}</TableCell>
+              <TableCell>{row.ram}</TableCell>
+              <TableCell>{row.catagory}</TableCell>
               <TableCell>{row.count}</TableCell>
-              <TableCell>{row.total}</TableCell>
+              <TableCell>
+                <div className='flex items-center gap-6'>
+
+                <div className='flex items-center gap-5'>
+                  <Button onClick={() => dispatch({ type: "decrement", idd:row.id })} variant='contained'>-</Button>
+                  <span className='text-[20px] text-blue-600'>{row.count}</span>
+                  <Button onClick={() => dispatch({ type: "increment", idd: row.id })} variant='contained'>+</Button>
+                </div>
+                <Button onClick={()=>{dispatch({type:"delete", idd:row.id})}} className='!bg-red-700' type='' variant='contained'>Delete</Button>
+                </div>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import '../details-components/style/index.scss'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import useAxios from '../../hooks/useAxios'
 import ratimg from '../details-components/imges/rat.svg'
 import shop from '../details-components/imges/shop.svg'
@@ -14,7 +14,8 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
-
+import Header from '../home-components/header'
+import { Korzinka } from '../../context/add-bag'
 
 
 // ==================================
@@ -38,13 +39,27 @@ console.log(cleanId);
     const {data , loading , error} = useAxios({url:`seleres/${cleanId}`})
     console.log(data);
     
+
+    const { dispatch } = useContext(Korzinka);
+    console.log(data);
+    
+  
+    // Savatga qo'shish funksiyasi
+    const addToCart = () => {
+      if (data) {
+        dispatch({ type: "add", value: data });
+      }
+    };
+
   return (
         <>
+
+        <Header/>
         {/* <pre>{JSON.stringify(data, null , 4)}</pre> */}
           <section className="details">
       <div className="container">
         <nav className="details-nav">
-          <a href="#">Home ></a>
+          <Link to={"/"}>Home ></Link>
           <a href="#">Products ></a>
           <a href="#">Laptops > </a>
         </nav>
@@ -154,7 +169,7 @@ console.log(cleanId);
                 <h5>Month</h5>
               </button>
             </div>
-            <button className="add-btn">Add to cart</button>
+            <button onClick={addToCart}  className="add-btn">Add to cart</button>
           </div>
         </div>
 

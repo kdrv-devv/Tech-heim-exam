@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Basket, Details, Home } from "../pages";
 import Seleres from "../components/seleres";
+import Admin from "../pages/admin";
 
 export const root = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ export const root = createBrowserRouter([
   {
     path: "/basket",
     element: <Basket />,
+  },
+  {
+    path: "/admin",
+    element: <Admin />,
   },
   {
     path: "/products/:id",

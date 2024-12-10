@@ -1,0 +1,250 @@
+{
+    "hero": [
+      {
+        "id": "1",
+        "title": "Tech Heim",
+        "textp": "Join the",
+        "textspan": "digital revolution",
+        "textBtn": "Explore More",
+        "image": "https://media.istockphoto.com/id/1394988455/photo/laptop-with-a-blank-screen-on-a-white-background.jpg?s=612x612&w=0&k=20&c=BXNMs3xZNXP__d22aVkeyfvgJ5T18r6HuUTEESYf_tE="
+      }
+    ],
+  
+    "cards": [
+      {
+        "id": "2",
+        "image": "https://mini-io-api.texnomart.uz/catalog/product/1071/107130/184654/3e7dd085-6c6d-465b-81ca-3abc4ce799e5.jpg",
+        "title": "Noutbuk HP 250 G8 3V5P9EA"
+      },
+      {
+        "id": "3",
+        "image": "https://apple-premium.ru/image/catalog/image/image-8/image-iphone-8-gold-2.jpg",
+        "title": "Iphone 8 plus gold 3V5P9EA"
+      },
+      {
+        "id": "4",
+        "image": "https://api.cabinet.smart-market.uz/uploads/images/ff80818163b9a1250c73a890",
+        "title": "MISHKA DEFENDORA"
+      },
+      {
+        "id": "5",
+        "image": "https://i.pcmag.com/imagery/articles/00rYdfLts7KhkdRF9QSDhqa-2.fit_lim.v1569486881.jpg",
+        "title": "Iphone 5 gold 3V5P9EA"
+      },
+      {
+        "id": "6",
+        "image": "https://www.leafstudios.in/cdn/shop/files/1_98f0528c-cde8-4599-8b92-fd745efe299f.png?v=1722233325",
+        "title": "Smart watch 3V5P9EA"
+      },
+      {
+        "id": "7",
+        "image": "https://target.scene7.com/is/image/Target/GUEST_69b0f1ed-9a10-4559-891b-de4e55043419",
+        "title": "Camera 250 G8 3V5P9EA"
+      }
+    ],
+    "smart": [
+      {
+        "id": "8",
+        "image": "https://api.cabinet.smart-market.uz/uploads/images/ff80818163b9a1250c73a890",
+        "title": "Logitech G502 Gaming Mouse",
+        "oldPrice": "$38.00",
+        "newPrice": 19,
+        "dollar": "$",
+        "chegirma": -50
+      },
+      {
+        "id": "9",
+        "image": "https://pcmarket.uz/wp-content/uploads/2024/08/b45dd9b2674cdf2c9878d8c22ad93a93-removebg-preview.png",
+        "title": "NPET K10 Wired Gaming Keyboard, LED Backlit, Spill-Resistant Design",
+        "oldPrice": "$49.00",
+        "newPrice": 34.3,
+        "dollar": "$",
+        "chegirma": -30
+      },
+      {
+        "id": "10",
+        "image": "https://www.gonoise.com/cdn/shop/products/1.6_44e4e36e-f762-4c89-b950-700aa320a935.png?v=1681610912",
+        "title": "Apple Watch Series 7 (GPS, 41MM)",
+        "oldPrice": "$289.00",
+        "newPrice": 231.2,
+        "dollar": "$",
+        "chegirma": -20
+      },
+      {
+        "id": "11",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaZ-4LcyWKrv_Bum-v5ub53critgNPo5XWTQ&s",
+        "title": "Apple 2022 MacBook Air M2 Chip (8GB RAM, 256GB SSD)",
+        "oldPrice": "$950.22",
+        "newPrice": 712.66,
+        "dollar": "$",
+        "chegirma": -25
+      },
+      {
+        "id": "12",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-2J9yNrAi9h8mA75xvSSHyCa8ZLwiQUn1Ax-F_-VoCmpD_ZWQoRrBJdsJvaP7SUiPg3E&usqp=CAU",
+        "title": "Iphone 8 plus gold for Gaming Mouse",
+        "oldPrice": "$31.00",
+        "newPrice": 29,
+        "dollar": "$",
+        "chegirma": -10
+      },
+      {
+        "id": "13",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMKcfEV2hr5hFTytUjLWcXluGrPKbk_J7-5Q&s",
+        "title": "samsung Titan smart watch",
+        "oldPrice": "$28.00",
+        "newPrice": 17,
+        "dollar": "$",
+        "chegirma": -31
+      }
+    ],
+    "products": [
+      {
+        "id": "14",
+        "title": "Iphone 14 promax 256 gig",
+        "brand": "Apple",
+        "model": "Macbook Pro",
+        "size": "13.3 Inches",
+        "ram": "8 GB",
+        "display": "13.3-inch (diagonal) LED-backlit display with IPS technology",
+        "processor": "Apple M2 chip",
+        "graphics": "  Apple 10-core GPU",
+        "height": "0.61 inch (1.56 cm)",
+        "newPrice": 930.9,
+        "dollar": "$",
+        "rate": 4.3,
+        "catagory": "products",
+        "image": "https://main.mobilezone.uz/product-attachment/1/QSjQn-7m_BWBlUYJIMw2CDLHlcw5Sbmb_2_2_2_2_2_2_2_2.jpg"
+      },
+      {
+        "id": "15",
+        "title": "Blackmagic Design Pocket Cinema Camera 6K Pro (Canon EF)",
+        "newPrice": 2535,
+        "dollar": "$",
+        "catagory": "products",
+        "brand": "Apple",
+        "model": "Macbook Pro",
+
+        "size": "13.3 Inches",
+        "ram": "8 GB",
+        "display": "13.3-inch (diagonal) LED-backlit display with IPS technology",
+        "processor": "Apple M2 chip",
+        "graphics": "  Apple 10-core GPU",
+        "height": "0.61 inch (1.56 cm)",
+  
+        "rate": 4.8,
+        "image": "https://havells.com/media/catalog/product/cache/844a913d283fe95e56e39582c5f2767b/import/TV/43PS850E.jpg"
+      },
+      {
+        "id": "16",
+        "title": "SAMSUNG Galaxy S24 Ultra Cell Phone,256 GB",
+        "newPrice": 1018,
+        "dollar": "$",
+        "catagory": "products",
+        "brand": "Apple",
+        "model": "Macbook Pro",
+        "size": "13.3 Inches",
+        "ram": "8 GB",
+        "display": "13.3-inch (diagonal) LED-backlit display with IPS technology",
+        "processor": "Apple M2 chip",
+        "graphics": "  Apple 10-core GPU",
+        "height": "0.61 inch (1.56 cm)",
+  
+        "rate": 4.7,
+        "image": "https://www.spot.uz/media/img/2024/01/iMz0Sm17055531043890_b.jpg"
+      },
+      {
+        "id": "17",
+        "title": "VR VisionTech X1",
+        "newPrice": 1399,
+        "brand": "Apple",
+        "model": "Macbook Pro",
+        "size": "13.3 Inches",
+        "ram": "8 GB",
+        "display": "13.3-inch (diagonal) LED-backlit display with IPS technology",
+        "processor": "Apple M2 chip",
+        "graphics": "  Apple 10-core GPU",
+        "height": "0.61 inch (1.56 cm)",
+        "dollar": "$",
+        "catagory": "products",
+        "rate": 3.9,
+        "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcST7HeCMiUOc_snD3aoOhcRSFtNfaXPf2_Fr2iGrMJKx2OyxNL_dDR0P1GVcEtg-okP-hD6RVR0btFHqY-agK0GEzfo81axP03lajLDDg_vDds36t1jFue4&usqp=CAc"
+      }
+    ],
+    "seleres": [
+      {
+        "id": "18",
+        "title": "EchoX Pro H900",
+        "newPrice": 93.9,
+        "dollar": "$",
+        "catagory": "seleres",
+        "brand": "Apple",
+        "model": "Macbook Pro",
+        "size": "13.3 Inches",
+        "ram": "8 GB",
+        "display": "13.3-inch (diagonal) LED-backlit display with IPS technology",
+        "processor": "Apple M2 chip",
+        "graphics": "  Apple 10-core GPU",
+        "height": "0.61 inch (1.56 cm)",
+  
+        "rate": 4.1,
+        "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQLYdR2LT4ZvQTg1oaZ8oUJLjNwlDjImWgAECEiV-fQ4HqGtr1fMNe2f3AUSQrBY06N02b9nSFJHX07ZsxmEs9C3ch6xKnOUqcjiUwWsgnEVJtYjY2Ekp5x&usqp=CAc"
+      },
+      {
+        "id": "19",
+        "title": "Play Station 4 Pro 1Tb",
+        "newPrice": 980,
+        "dollar": "$",
+        "catagory": "seleres",
+        "brand": "Apple",
+        "model": "Macbook Pro",
+        "size": "13.3 Inches",
+        "ram": "8 GB",
+        "display": "13.3-inch (diagonal) LED-backlit display with IPS technology",
+        "processor": "Apple M2 chip",
+        "graphics": "  Apple 10-core GPU",
+        "height": "0.61 inch (1.56 cm)",
+  
+        "rate": 4.4,
+        "image": "https://images.uzum.uz/cj688kr0lbjdojdd1t7g/original.jpg"
+      },
+      {
+        "id": "20",
+        "title": "Apple MacBook Air 15 w/ Touch ID (2023) ",
+        "newPrice": 118,
+        "dollar": "$",
+        "catagory": "seleres",
+        "brand": "Apple",
+        "model": "Macbook Pro",
+        "size": "13.3 Inches",
+        "ram": "8 GB",
+        "display": "13.3-inch (diagonal) LED-backlit display with IPS technology",
+        "processor": "Apple M2 chip",
+        "graphics": "  Apple 10-core GPU",
+        "height": "0.61 inch (1.56 cm)",
+  
+        "rate": 4.1,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR23hVJDRwORZETPdBEX3aXkWXKwAW2wmWDlg&s"
+      },
+      {
+        "id": "21",
+        "title": "Airpods pro2",
+        "newPrice": 274.04,
+        "dollar": "$",
+        "catagory": "seleres",
+        "brand": "Apple",
+        "model": "Macbook Pro",
+        "size": "13.3 Inches",
+        "ram": "8 GB",
+        "display": "13.3-inch (diagonal) LED-backlit display with IPS technology",
+        "processor": "Apple M2 chip",
+        "graphics": "  Apple 10-core GPU",
+        "height": "0.61 inch (1.56 cm)",
+
+
+        "rate": 4.2,
+        "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ7W7SjOViLKvLhCGAbH6PnIwreZCSuyB-r7SOMJ7t2fEiF68YeFpCY1jOD2ybprSRmyULfPsTCvMNlXq_jz-Z_koqW3kkC-VwlBg3rXJ9nKY0cVlBMAZvJcJZNlCb-X8LxA8IvXBdXSg&usqp=CAc"
+      }
+    ]
+  }
+      

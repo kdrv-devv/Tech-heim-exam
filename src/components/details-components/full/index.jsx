@@ -13,7 +13,7 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useAxios from "../../../hooks/useAxios";
 import { Korzinka } from "../../../context/add-bag";
 
@@ -42,7 +42,7 @@ const DetailsComponent = () => {
     <section className="details">
       <div className="container">
         <nav className="details-nav">
-          <a href="#">Home ></a>
+        <Link to={"/"}>Home ></Link>
           <a href="#">Products ></a>
           <a href="#">Laptops ></a>
         </nav>
