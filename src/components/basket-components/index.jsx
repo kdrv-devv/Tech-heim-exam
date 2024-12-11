@@ -93,7 +93,7 @@ const BasketComponent = () => {
     <div className="basket-bottom">
       <div className='subtotal'>
           <h5>Subtotal </h5>
-          <h6>842.50</h6>
+          <h6>2323$</h6>
       </div>
       <Button type='primary' variant="contained">Pay</Button>
     </div>
