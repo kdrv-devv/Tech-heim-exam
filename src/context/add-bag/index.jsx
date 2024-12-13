@@ -12,7 +12,7 @@ const initialState={
     switch (type) {
         case "add":
             const existingItemIndex = state.data.findIndex((item) => item.id === value.id);
-            
+
             if (existingItemIndex !== -1) {
               const updatedData = [...state.data];
               updatedData[existingItemIndex].count += 1;
@@ -32,6 +32,7 @@ const initialState={
             ...state, 
             data: deleteValue, 
         };
+        
         case "increment":
             const incrementedData = state.data.map((item) =>
               item.id === idd ? { ...item, count: item.count + 1,price:item.price * item.count  } : item

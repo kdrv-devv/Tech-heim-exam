@@ -5,6 +5,7 @@ import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import CircularProgress from "@mui/material/CircularProgress";
+import { useNavigate } from "react-router-dom";
 
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
@@ -19,7 +20,9 @@ const VisuallyHiddenInput = styled("input")({
 export default function Admin() {
   const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [del,setDel] = useState(false) 
   const [formData, setFormData] = useState({
+
     productName: "",
     brand: "",
     modelName: "",
@@ -93,6 +96,10 @@ export default function Admin() {
       .catch((err) => console.error("Fetch xatosi:", err))
       .finally(() => setLoading(false));
   };
+
+  const navigate = useNavigate()
+
+
 
   return (
     <>
@@ -217,6 +224,16 @@ export default function Admin() {
             </Button>
           </div>
         </form>
+
+        
+        <div className="container pt-[60px] ">
+              <div className="pl-[30px] flex items-center gap-[40px]">
+                <Button onClick={()=> {navigate("/editadmin")}} type="primary" variant="contained">Edit mode</Button>
+                <Button type="" variant="contained" className="!bg-red-800">Delete mode</Button>
+              </div>
+        </div>
+
+
       </section>
     </>
   );

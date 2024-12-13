@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Basket, Details, Home } from "../pages";
 import Seleres from "../components/seleres";
 import Admin from "../pages/admin";
+import EditAdmin from "../pages/admin/edit-admin";
 
 export const root = createBrowserRouter([
   {
@@ -27,5 +28,9 @@ export const root = createBrowserRouter([
   {
     path:"/admin",
     element:<Admin/>
+  } ,
+   {
+    path:"/editadmin",
+    element:<EditAdmin/>
   }
 ]);
