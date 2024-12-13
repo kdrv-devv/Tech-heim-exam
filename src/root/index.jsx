@@ -3,6 +3,8 @@ import { Basket, Details, Home } from "../pages";
 import Seleres from "../components/seleres";
 import Admin from "../pages/admin";
 import EditAdmin from "../pages/admin/edit-admin";
+import AdminPanel from "../pages/admin-Panel";
+import DeleteAdmin from "../pages/admin/delete-admin";
 
 export const root = createBrowserRouter([
   {
@@ -27,10 +29,20 @@ export const root = createBrowserRouter([
   },
   {
     path:"/admin",
-    element:<Admin/>
-  } ,
-   {
-    path:"/editadmin",
-    element:<EditAdmin/>
+    element:<AdminPanel/>,
+    children:[
+      {
+        path:"",
+        element:<Admin/>
+      },
+      {
+        path:'editadmin',
+        element:<EditAdmin/>
+      },
+      {
+        path:'deleteadmin',
+        element:<DeleteAdmin/>
+      }
+    ]
   }
 ]);

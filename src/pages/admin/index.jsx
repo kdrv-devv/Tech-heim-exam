@@ -20,9 +20,8 @@ const VisuallyHiddenInput = styled("input")({
 export default function Admin() {
   const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [del,setDel] = useState(false) 
+  const [del, setDel] = useState(false);
   const [formData, setFormData] = useState({
-
     productName: "",
     brand: "",
     modelName: "",
@@ -97,14 +96,12 @@ export default function Admin() {
       .finally(() => setLoading(false));
   };
 
-  const navigate = useNavigate()
-
-
+  const navigate = useNavigate();
 
   return (
     <>
-      <Header />
-      <section className="admin">
+      <section className="admin w-[100%]">
+        <h2 className="text-center text-[30px] text-gray-500">Add new Product</h2>
         <form className="container" onSubmit={handleSubmit}>
           <div className="admin-left">
             <div className="name">
@@ -225,15 +222,7 @@ export default function Admin() {
           </div>
         </form>
 
-        
-        <div className="container pt-[60px] ">
-              <div className="pl-[30px] flex items-center gap-[40px]">
-                <Button onClick={()=> {navigate("/editadmin")}} type="primary" variant="contained">Edit mode</Button>
-                <Button type="" variant="contained" className="!bg-red-800">Delete mode</Button>
-              </div>
-        </div>
-
-
+      
       </section>
     </>
   );
