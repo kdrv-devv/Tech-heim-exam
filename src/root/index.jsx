@@ -21,28 +21,28 @@ export const root = createBrowserRouter([
   },
   {
     path: "/products/:id",
-    element: <Details/>,
+    element: <Details />,
   },
   {
     path: "/seleres/:id",
-    element: <Seleres/>,
+    element: <Seleres />,
   },
   {
-    path:"/admin",
-    element:<AdminPanel/>,
-    children:[
+    path: "/admin",
+    element: <AdminPanel />,
+    children: [
       {
-        path:"",
-        element:<Admin/>
+        path: "",
+        element: <Admin />,
       },
       {
-        path:'editadmin',
-        element:<EditAdmin/>
+        path: "editadmin",
+        element: <EditAdmin />,
       },
       {
-        path:'deleteadmin',
-        element:<DeleteAdmin/>
-      }
-    ]
-  }
+        path: "deleteadmin",
+        element: <DeleteAdmin />,
+      },
+    ],
+  },
 ]);

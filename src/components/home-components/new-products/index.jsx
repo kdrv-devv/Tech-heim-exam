@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import useAxios from "../../../hooks/useAxios";
 
 const NewProduct = () => {
-  const { data, loading, error } = useAxios({ url:`products` });
+  const { data, loading, error } = useAxios({ url:`api/products` });
   console.log(data);
   
  
@@ -23,11 +23,12 @@ const NewProduct = () => {
             <div className="view-all">
               <h4>New Products</h4>
               <Link>
-                <h6>View all > </h6>
+                <h6>View all {`>`} </h6>
               </Link>
             </div>
 
             <div className="new-product-cards">
+              
               {data.map((item) => (
                 <div key={item.id} className="new-card">
                   <button   className="like-btn z-[9999]">
@@ -50,8 +51,13 @@ const NewProduct = () => {
                 </div>
 
               ))}
+
+
             </div>
           </div>
+
+
+
 
           <div className="new-products-bottom">
             <div className="new-products-left">

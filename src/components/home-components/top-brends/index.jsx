@@ -6,7 +6,6 @@ import canon from './imges/canon.svg'
 import huawei from './imges/huawei-svgrepo-com 1.svg'
 import lenovo from './imges/lenovo.svg'
 import smartwatch from './imges/smartwatch.svg'
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import './style/index.scss'
 

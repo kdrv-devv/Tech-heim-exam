@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useState } from 'react';
+import React, { createContext, useReducer } from 'react';
 
 export const Korzinka = createContext();
 
@@ -8,7 +8,6 @@ const initialState={
   
   const reducer =(state , {type , value,idd})=>{
     
-      console.log(state.data, "BU state");
     switch (type) {
         case "add":
             const existingItemIndex = state.data.findIndex((item) => item.id === value.id);

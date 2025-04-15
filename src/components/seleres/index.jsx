@@ -13,7 +13,6 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
 import Header from '../home-components/header'
 import { Korzinka } from '../../context/add-bag'
 
@@ -29,19 +28,11 @@ const Seleres = () => {
       setValue(event.target.value); 
     };
 
-
-
     const {id} = useParams()
-    console.log(id);
     const cleanId = id.replace(":", ""); 
-console.log(cleanId); 
     
-    const {data , loading , error} = useAxios({url:`seleres/${cleanId}`})
-    console.log(data);
-    
-
+    const {data , loading , error} = useAxios({url:`api/sellers/${cleanId}`})
     const { dispatch } = useContext(Korzinka);
-    console.log(data);
     
   
     const addToCart = () => {
@@ -58,9 +49,9 @@ console.log(cleanId);
           <section className="details">
       <div className="container">
         <nav className="details-nav">
-          <Link to={"/"}>Home ></Link>
-          <a href="#">Products ></a>
-          <a href="#">Laptops > </a>
+          <Link to={"/"}>Home {`>`}</Link>
+          <a href="#">Products {`>`}</a>
+          <a href="#">Laptops {`>`} </a>
         </nav>
         <div className="product-main-details">
           <div className="product-photos">

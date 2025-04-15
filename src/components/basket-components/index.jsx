@@ -24,11 +24,11 @@ const BasketComponent = () => {
     <section className="basket">
       <div className="container">
         <div className="basket-header">
-          <a href="#">Home > </a>
-          <a href="#">Account ></a>
-          <a href="#">Payment & Instalmets > </a>
+          <a href="#">Home  </a>
+          <a href="#">Account </a>
+          <a href="#">Payment & Instalmets  </a>
           <a href="#" className="!text-blue-500">
-            Instalment >{" "}
+            Instalment {">"}
           </a>
         </div>
 

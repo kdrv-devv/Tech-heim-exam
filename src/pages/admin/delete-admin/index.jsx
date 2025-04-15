@@ -1,8 +1,6 @@
 import React from 'react'
-import { Header } from '../../../components'
-import { Link } from 'react-router-dom'
 import { CiSearch } from "react-icons/ci";
-import { Button, ButtonBase } from '@mui/material';
+import { Button } from '@mui/material';
 const DeleteAdmin = () => {
   return (
     <section className='edit-admin w-[100%]'>

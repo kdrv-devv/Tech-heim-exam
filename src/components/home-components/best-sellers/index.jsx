@@ -1,20 +1,14 @@
 // import './style/index.scss'
 import { Link } from "react-router-dom";
 import React, { useContext } from "react";
-import visonPro from "./imges/visonpro.svg";
-import ultra from "./imges/23ultra.svg";
-import iphone from "./imges/iphone.png";
-import iphone15 from "./imges/iphone15.png";
+
 import { IoIosStar } from "react-icons/io";
 import { IoIosHeartEmpty } from "react-icons/io";
-import laptop from "./imges/laptop.svg";
-import airpods from "./imges/airpods.svg";
-import headphone from "./imges/headphone.svg";
 
 import "../new-products/style/index.scss";
 import useAxios from "../../../hooks/useAxios";
 const BestSellers = () => {
-  const { data, loading, error } = useAxios({ url: "seleres" });
+  const { data, loading, error } = useAxios({ url: "api/sellers" });
 
   return (
     <>
@@ -24,7 +18,7 @@ const BestSellers = () => {
             <div className="view-all">
               <h4>Best Sellers</h4>
               <Link>
-                <h6>View all > </h6>
+                <h6>View all {">"} </h6>
               </Link>
             </div>
 

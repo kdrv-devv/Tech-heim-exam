@@ -18,14 +18,16 @@ import useAxios from "../../../hooks/useAxios";
 import { Korzinka } from "../../../context/add-bag";
 
 const DetailsComponent = () => {
+
   const [value, setValue] = useState("female");
+
   const handleChange = (event) => {
     setValue(event.target.value);
   };
 
   const { id } = useParams();
-  const cleanId = id.replace(":", ""); // ":" belgisi olib tashlanadi
-  const { data, loading, error } = useAxios({ url: `products/${cleanId}` });
+  const cleanId = id.replace(":", ""); 
+  const { data, loading, error } = useAxios({ url: `api/products/${cleanId}` });
 
   const { dispatch } = useContext(Korzinka);
   console.log(data);
@@ -42,9 +44,9 @@ const DetailsComponent = () => {
     <section className="details">
       <div className="container">
         <nav className="details-nav">
-        <Link to={"/"}>Home ></Link>
-          <a href="#">Products ></a>
-          <a href="#">Laptops ></a>
+        <Link to={"/"}>Home {`>`}</Link>
+          <a href="#">Products{`>`}</a>
+          <a href="#">Laptops{`>`}</a>
         </nav>
         <div className="product-main-details">
           <div className="product-photos">
