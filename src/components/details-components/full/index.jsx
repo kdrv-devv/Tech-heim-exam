@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
-import bigPhoto from "../imges/big-photo.png";
-import productLittle from "../imges/product-little.png";
+
 import ratimg from "../imges/rat.svg";
 import shop from "../imges/shop.svg";
 import guaranted from "../imges/verify.svg";
@@ -30,10 +29,8 @@ const DetailsComponent = () => {
   const { data, loading, error } = useAxios({ url: `api/products/${cleanId}` });
 
   const { dispatch } = useContext(Korzinka);
-  console.log(data);
   
 
-  // Savatga qo'shish funksiyasi
   const addToCart = () => {
     if (data) {
       dispatch({ type: "add", value: data });

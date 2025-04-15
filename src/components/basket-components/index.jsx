@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import axios from "axios";
+import React, { useContext, useEffect } from "react";
 
 import "./style/index.scss";
 import {
@@ -13,12 +12,20 @@ import {
   Checkbox,
   Button,
 } from "@mui/material";
-import useAxios from "../../hooks/useAxios";
 import { Korzinka } from "../../context/add-bag";
 
 const BasketComponent = () => {
   const { state, dispatch } = useContext(Korzinka);
-  console.log(state);
+
+  useEffect(()=>{
+    localStorage.setItem("shop" , JSON.stringify(state.data))
+  },[state.data])
+
+  let subtotal = state.data.reduce((acc, cur) => {
+    const price = Number(cur.newPrice); // agar string bo‘lsa
+    const count = cur.count || 1;
+    return acc + price * count;
+  }, 0);
 
   return (
     <section className="basket">
@@ -111,9 +118,9 @@ const BasketComponent = () => {
         </div>
 
         <div className="basket-bottom">
-          <div className="subtotal">
+          <div className="subtotal flex items-center gap-3">
             <h5>Subtotal </h5>
-            <h6>2323$</h6>
+            <h6>{subtotal}$</h6>
           </div>
           <Button type="primary" variant="contained">
             Pay

@@ -34,7 +34,6 @@ const Seleres = () => {
     const {data , loading , error} = useAxios({url:`api/sellers/${cleanId}`})
     const { dispatch } = useContext(Korzinka);
     
-  
     const addToCart = () => {
       if (data) {
         dispatch({ type: "add", value: data });

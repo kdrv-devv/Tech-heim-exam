@@ -1,20 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import "./style/index.scss";
-import visonPro from "./imges/visonpro.svg";
-import ultra from "./imges/23ultra.svg";
-import iphone from "./imges/iphone.png";
 import iphone15 from "./imges/iphone15.png";
-import { IoIosStar } from "react-icons/io";
+import { IoIosHeart, IoIosStar } from "react-icons/io";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { Link } from "react-router-dom";
 import useAxios from "../../../hooks/useAxios";
+import { useLoader } from "../../../hooks/useLoader";
+import { Liked } from "../../../context/add-liked";
 
 const NewProduct = () => {
-  const { data, loading, error } = useAxios({ url:`api/products` });
-  console.log(data);
-  
- 
+  const { data, loading, error } = useAxios({ url: `api/products` });
+  const { newProductsLoader } = useLoader();
 
+  const { state ,  dispatch } = useContext(Liked);
+  useEffect(() => {
+    localStorage.setItem("liked", JSON.stringify(state.data));
+  }, [state.data]);
   return (
     <>
       <section className="new-product">
@@ -28,36 +29,43 @@ const NewProduct = () => {
             </div>
 
             <div className="new-product-cards">
-              
-              {data.map((item) => (
-                <div key={item.id} className="new-card">
-                  <button   className="like-btn z-[9999]">
-                    <IoIosHeartEmpty />
-                  </button>
-                  <Link to={`/products/:${item.id}`}>
-                  <div className="new-card-top">
-                    <img src={item.image} alt="" />
-                  </div>
-                  <div className="new-card-bottom">
-                    <h5>{item.title}</h5>
-                    <div className="rating">
-                      <h6>{item.newPrice}</h6>
-                      <h5>
-                        <IoIosStar /> {item.rate}
-                      </h5>
-                    </div>
-                  </div>
-                </Link>
-                </div>
-
-              ))}
-
-
+              {loading || error
+                ? newProductsLoader()
+                : data.map((item) => {
+                    const isLiked = state.data.some((el) => el.id === item.id);
+                    return (
+                      <div key={item.id} className="new-card">
+                        <button
+                          onClick={() =>
+                            dispatch({ type: "toggleliked", data: item })
+                          }
+                          className="like-btn z-[9]"
+                        >
+                          {isLiked ? (
+                            <IoIosHeart style={{ color: "red" }} />
+                          ) : (
+                            <IoIosHeartEmpty />
+                          )}
+                        </button>
+                        <Link to={`/products/:${item.id}`}>
+                          <div className="new-card-top">
+                            <img src={item.image} alt="" />
+                          </div>
+                          <div className="new-card-bottom">
+                            <h5>{item.title}</h5>
+                            <div className="rating">
+                              <h6>{item.newPrice}</h6>
+                              <h5>
+                                <IoIosStar /> {item.rate}
+                              </h5>
+                            </div>
+                          </div>
+                        </Link>
+                      </div>
+                    );
+                  })}
             </div>
           </div>
-
-
-
 
           <div className="new-products-bottom">
             <div className="new-products-left">

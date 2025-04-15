@@ -1,14 +1,23 @@
 // import './style/index.scss'
 import { Link } from "react-router-dom";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
-import { IoIosStar } from "react-icons/io";
+import { IoIosHeart, IoIosStar } from "react-icons/io";
 import { IoIosHeartEmpty } from "react-icons/io";
 
 import "../new-products/style/index.scss";
 import useAxios from "../../../hooks/useAxios";
+import { useLoader } from "../../../hooks/useLoader";
+import { Liked } from "../../../context/add-liked";
 const BestSellers = () => {
   const { data, loading, error } = useAxios({ url: "api/sellers" });
+
+  const { state ,  dispatch } = useContext(Liked)
+
+    useEffect(() => {
+      localStorage.setItem("liked", JSON.stringify(state.data));
+    }, [state.data]);
+  const {newProductsLoader} = useLoader()
 
   return (
     <>
@@ -23,11 +32,23 @@ const BestSellers = () => {
             </div>
 
             <div className="new-product-cards">
-              {data.map((item) => (
+              {  loading || error ? newProductsLoader() : data.map((item) => {
+               
+               const isLiked = state.data.some((el) => el.id === item.id);
+               return(
                 <div className="new-card">
-                  <button className="like-btn">
-                    <IoIosHeartEmpty />
-                  </button>
+                        <button
+                          onClick={() =>
+                            dispatch({ type: "toggleliked", data: item })
+                          }
+                          className="like-btn z-[9]"
+                        >
+                          {isLiked ? (
+                            <IoIosHeart style={{ color: "red" }} />
+                          ) : (
+                            <IoIosHeartEmpty />
+                          )}
+                        </button>
                   <Link to={`/seleres/:${item.id}`}>
                     <div className="new-card-top">
                       <img src={item.image} alt="" />
@@ -42,8 +63,8 @@ const BestSellers = () => {
                       </div>
                     </div>
                   </Link>
-                </div>
-              ))}
+                </div>)
+              })}
             </div>
           </div>
         </div>

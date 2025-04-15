@@ -4,14 +4,13 @@ export const Korzinka = createContext();
 
 const initialState={
     data:JSON.parse(localStorage.getItem("shop")) || []
-  }
+}
   
-  const reducer =(state , {type , value,idd})=>{
+  const reducer = (state , {type , value,idd}) => {
     
     switch (type) {
         case "add":
             const existingItemIndex = state.data.findIndex((item) => item.id === value.id);
-
             if (existingItemIndex !== -1) {
               const updatedData = [...state.data];
               updatedData[existingItemIndex].count += 1;
@@ -34,7 +33,7 @@ const initialState={
         
         case "increment":
             const incrementedData = state.data.map((item) =>
-              item.id === idd ? { ...item, count: item.count + 1,price:item.price * item.count  } : item
+              item.id === idd ? { ...item, count: item.count + 1, price:item.price * item.count  } : item
             );
             localStorage.setItem("shop", JSON.stringify(incrementedData));
             return { ...state, data: incrementedData };
@@ -47,7 +46,8 @@ const initialState={
             );
             localStorage.setItem("shop", JSON.stringify(decrementedData));
             return { ...state, data: decrementedData };
-          case "isLiked":
+          case "addliked":
+
             
       default:
         break;   
